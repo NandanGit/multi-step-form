@@ -16,9 +16,31 @@ $white: hsl(0, 0%, 100%);
 $fs-body: 1rem;
 $fs-heading: 1.5rem;
 
-$fw-body: 400;
-$fw-heading: 700;
+$fw-sm: 400;
+$fw-md: 500;
+$fw-lg: 700;
+
+$font-family-sans-serif: Ubuntu, sans-serif;
 
 // Breakpoints
-$bp-mobile: 375px;
-// $bp-desktop: 1440px;
+// $bp-mobile: 375px;
+$bp-mobile: 768px;
+
+// Border radius
+$br-sm: 0.25rem;
+$br-md: 0.5rem;
+$br-lg: 0.75rem;
+$br-xl: 1rem;
+$br-pill: 50rem;
+
+// Padding
+$pad-sm: 0.25rem;
+$pad-md: 0.5rem;
+$pad-lg: 1rem;
+
+// Z index
+$z-ind-base: 1;
+$z-index-1: 10;
+
+// Custom
+$screen-to-onboarding-on-mobile: 6rem;

@@ -1,0 +1,66 @@
+.Section {
+	width: 80%;
+	margin: 2rem auto 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+
+	@include mobile {
+		width: auto;
+		margin: 0;
+	}
+
+	> .section-title {
+		color: $primary-1;
+		margin-bottom: 0.75rem;
+	}
+
+	> .section-description {
+		color: $gray-1;
+		font-size: 0.92rem;
+		margin-bottom: 2rem;
+
+		@include mobile {
+			font-size: 1rem;
+		}
+	}
+
+	> form {
+		> .form-control {
+			width: 100%;
+		}
+	}
+
+	> .actions {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-top: auto;
+		margin-bottom: 1rem;
+
+		@include mobile {
+			position: fixed;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			margin: 0;
+			padding: 1rem;
+			background-color: $gray-4;
+			box-shadow: 0 0 1rem -0.25rem rgba(0, 0, 0, 0.1);
+		}
+
+		&.first-step {
+			justify-content: flex-end;
+		}
+
+		&.last-step {
+			> .next-button {
+				background-color: $primary-2;
+
+				&:hover {
+					background-color: darken($primary-2, 10%);
+				}
+			}
+		}
+	}
+}

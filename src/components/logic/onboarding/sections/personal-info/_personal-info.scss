@@ -1,0 +1,52 @@
+.PersonalInfo {
+	> form {
+		> .input-control {
+			// width: 100%;
+			display: flex;
+			flex-direction: column;
+			margin-bottom: 1rem;
+
+			&.invalid {
+				> .meta {
+					> .error {
+						opacity: 1;
+					}
+				}
+
+				> input {
+					border-color: $danger;
+				}
+			}
+
+			> .meta {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				margin-bottom: 0.25rem;
+				font-size: 0.75rem;
+
+				> .label {
+					color: $primary-1;
+				}
+
+				> .error {
+					opacity: 0;
+					color: $danger;
+				}
+			}
+
+			> input {
+				background: transparent;
+				border: 1px solid $gray-2;
+				border-radius: $br-md;
+				padding: 0.75rem;
+				font-family: $font-family-sans-serif;
+
+				&:focus {
+					outline: none;
+					border-color: $primary-2;
+				}
+			}
+		}
+	}
+}

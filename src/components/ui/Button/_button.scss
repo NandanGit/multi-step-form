@@ -1,0 +1,30 @@
+.Button {
+	border: none;
+	padding: 1rem 1.5rem;
+	border-radius: $br-md;
+	letter-spacing: 0.05rem;
+	transition: all 0.2s ease-in-out;
+
+	&.filled {
+		background-color: $primary-1;
+		color: $white;
+	}
+
+	&.minimal {
+		background-color: transparent;
+		color: $gray-1;
+
+		&:hover {
+			background-color: darken($gray-3, 1%);
+		}
+	}
+
+	&:hover {
+		cursor: pointer;
+		background-color: lighten($primary-1, 10%);
+	}
+
+	&:active {
+		transform: scale(0.98);
+	}
+}

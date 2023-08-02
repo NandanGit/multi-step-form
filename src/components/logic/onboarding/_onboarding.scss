@@ -1,0 +1,22 @@
+.Onboarding {
+	background-color: $gray-4;
+	width: 66%;
+	height: 75%;
+	border-radius: $br-lg;
+	padding: $pad-lg;
+
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	gap: 1rem;
+	z-index: 1;
+
+	box-shadow: 0 0 1rem -0.25rem rgba(0, 0, 0, 0.1);
+
+	@include mobile {
+		width: 90%;
+		display: initial;
+		height: fit-content;
+		padding: 2rem 1.5rem;
+		margin-top: $screen-to-onboarding-on-mobile;
+	}
+}
