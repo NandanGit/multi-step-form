@@ -8,7 +8,8 @@ export interface SelectPlanProps {}
 export const SelectPlan: React.FC<SelectPlanProps> = () => {
 	const {
 		actions: {
-			selectPlan: { goBack, onSubmit },
+			selectPlan: { onSubmit },
+			goBack,
 		},
 	} = useOnboarding();
 	return (

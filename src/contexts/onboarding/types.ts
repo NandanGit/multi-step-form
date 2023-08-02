@@ -33,14 +33,12 @@ export interface OnboardingContextActions {
 	};
 	selectPlan: {
 		onSubmit: () => void;
-		goBack: () => void;
 	};
 	addOns: {
 		onSubmit: () => void;
-		goBack: () => void;
 	};
 	summary: {
 		onSubmit: () => void;
-		goBack: () => void;
 	};
+	goBack: () => void;
 }

@@ -118,16 +118,22 @@ export const OnboardingProvider: React.FC<{ children: React.ReactNode }> = ({
 		},
 	};
 
-	const backHandlers = {
-		selectPlan: () => {
-			setSidebarStep(1);
-		},
-		addOns: () => {
-			setSidebarStep(2);
-		},
-		summary: () => {
-			setSidebarStep(3);
-		},
+	// const backHandlers = {
+	// 	selectPlan: () => {
+	// 		setSidebarStep(1);
+	// 	},
+	// 	addOns: () => {
+	// 		setSidebarStep(2);
+	// 	},
+	// 	summary: () => {
+	// 		setSidebarStep(3);
+	// 	},
+	// };
+
+	const backHandler = () => {
+		// Find current step
+		const currentStep = sidebarSteps.find((item) => item.isActive);
+		setSidebarStep((currentStep?.step || 2) - 1);
 	};
 
 	return (
@@ -152,16 +158,14 @@ export const OnboardingProvider: React.FC<{ children: React.ReactNode }> = ({
 					},
 					selectPlan: {
 						onSubmit: submitHandlers.selectPlan,
-						goBack: backHandlers.selectPlan,
 					},
 					addOns: {
 						onSubmit: submitHandlers.addOns,
-						goBack: backHandlers.addOns,
 					},
 					summary: {
 						onSubmit: submitHandlers.summary,
-						goBack: backHandlers.summary,
 					},
+					goBack: backHandler,
 				},
 			}}
 		>

@@ -8,7 +8,8 @@ export interface SummaryProps {}
 export const Summary: React.FC<SummaryProps> = () => {
 	const {
 		actions: {
-			summary: { goBack, onSubmit },
+			summary: { onSubmit },
+			goBack,
 		},
 	} = useOnboarding();
 	return (

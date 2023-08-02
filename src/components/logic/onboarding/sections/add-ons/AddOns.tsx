@@ -8,7 +8,8 @@ export interface AddOnsProps {}
 export const AddOns: React.FC<AddOnsProps> = () => {
 	const {
 		actions: {
-			addOns: { goBack, onSubmit },
+			addOns: { onSubmit },
+			goBack,
 		},
 	} = useOnboarding();
 	return (
