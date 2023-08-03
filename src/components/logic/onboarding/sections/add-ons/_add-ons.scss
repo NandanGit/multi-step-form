@@ -1,0 +1,68 @@
+.AddOns {
+	> form {
+		> .checkbox-control {
+			display: flex;
+			flex-direction: column;
+			> label {
+				padding: $pad-lg;
+				margin-bottom: 1rem;
+				border-radius: $br-md;
+				border: 1px solid $gray-2;
+				display: flex;
+				flex-direction: row;
+				justify-content: flex-start;
+				align-items: center;
+
+				&:hover {
+					cursor: pointer;
+					border-color: $primary-3;
+				}
+
+				input[type='checkbox'] {
+					display: none;
+				}
+
+				&.picked {
+					background-color: $gray-3;
+					border-color: $primary-2;
+
+					> .checkbox {
+						border-color: $primary-2;
+						background-color: $primary-2;
+					}
+				}
+
+				> .checkbox {
+					width: 1rem;
+					height: 1rem;
+					border: 1px solid $gray-2;
+					border-radius: $br-sm;
+					margin-right: 1rem;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+				}
+
+				> .info {
+					flex: 1;
+
+					> .title {
+						font-weight: $fw-md;
+						color: $primary-1;
+						margin-bottom: 0.25rem;
+					}
+
+					> .description {
+						font-size: 0.85rem;
+						color: $gray-1;
+					}
+				}
+
+				> .price {
+					color: $primary-2;
+					font-size: 0.85rem;
+				}
+			}
+		}
+	}
+}

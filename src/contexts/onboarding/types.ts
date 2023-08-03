@@ -25,7 +25,9 @@ export interface OnboardingContextState {
 			selectedPlan: PlanType;
 			selectedPeriod: PlanPeriod;
 		};
-		addOns: object;
+		addOns: {
+			addOns: AddOn[];
+		};
 		summary: object;
 	};
 }
@@ -42,6 +44,7 @@ export interface OnboardingContextActions {
 	};
 	addOns: {
 		onSubmit: () => void;
+		onChange: (addOnName: string) => void;
 	};
 	summary: {
 		onSubmit: () => void;
@@ -55,4 +58,12 @@ export interface Plan {
 	name: PlanType;
 	monthlyPrice: number;
 	yearlyPrice: number;
+}
+
+export interface AddOn {
+	name: string;
+	description: string;
+	monthlyPrice: number;
+	yearlyPrice: number;
+	isPicked: boolean;
 }
