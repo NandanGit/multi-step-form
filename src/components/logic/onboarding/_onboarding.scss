@@ -16,6 +16,9 @@
 		width: 90%;
 		display: initial;
 		height: fit-content;
+		// max-height: 70%;
+		max-height: calc(100% - $screen-to-onboarding-on-mobile - 6.5rem);
+		overflow: scroll;
 		padding: 2rem 1.5rem;
 		margin-top: $screen-to-onboarding-on-mobile;
 	}

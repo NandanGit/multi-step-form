@@ -1,0 +1,109 @@
+.SelectPlan {
+	> form {
+		> .radio-control {
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr;
+			gap: 1rem;
+			// margin-top: 2rem;
+
+			@include mobile {
+				grid-template-columns: 1fr;
+			}
+
+			> label {
+				border: 1px solid $gray-2;
+				border-radius: $br-md;
+				padding: $pad-lg;
+
+				transition: all 0.2s ease-in-out;
+
+				&:hover {
+					cursor: pointer;
+					border-color: $primary-2;
+				}
+
+				@include mobile {
+					display: flex;
+					flex-direction: row;
+					align-items: flex-start;
+					justify-content: flex-start;
+				}
+
+				&.selected {
+					border-color: $primary-2;
+					// background-color: rgba($primary-2, 0.02);
+					background-color: $gray-3;
+				}
+
+				> input {
+					display: none;
+				}
+
+				> .plan-icon {
+					margin-bottom: 2rem;
+
+					@include mobile {
+						margin-bottom: 0;
+						margin-right: 1rem;
+					}
+				}
+
+				> .plan-details {
+					> p {
+						margin-top: 0.25rem;
+
+						@include mobile {
+							margin-top: 0;
+							margin-bottom: 0.25rem;
+						}
+
+						&.title {
+							font-weight: $fw-md;
+						}
+
+						&.price {
+							color: $gray-1;
+							font-size: 0.85rem;
+						}
+
+						&.offer {
+							font-size: 0.75rem;
+						}
+					}
+				}
+			}
+		}
+
+		> .switch-control {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin-top: 2rem;
+			padding: $pad-lg;
+			background-color: $gray-3;
+			border-radius: $br-md;
+
+			> p {
+				flex: 1;
+				color: $gray-1;
+				transition: all 0.2s ease-in-out;
+
+				&:first-child {
+					text-align: right;
+				}
+
+				&:last-child {
+					text-align: left;
+				}
+
+				&.active {
+					color: $primary-1;
+				}
+			}
+
+			> .plan-period-switch {
+				margin: 0 1.5rem;
+			}
+		}
+	}
+}

@@ -1,0 +1,34 @@
+.Switch {
+	background-color: $primary-1;
+	width: 2rem;
+	height: 1rem;
+	border-radius: $br-pill;
+
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+
+	&:hover {
+		cursor: pointer;
+	}
+
+	input[type='checkbox'] {
+		display: none;
+	}
+
+	&.selected {
+		.thumb {
+			margin-left: 1.2rem;
+		}
+	}
+
+	.thumb {
+		background-color: $white;
+		width: 0.6rem;
+		height: 0.6rem;
+		border-radius: $br-pill;
+		transition: all 0.2s ease-in-out;
+		margin-left: 0.2rem;
+		// transform: translateX(0);
+	}
+}

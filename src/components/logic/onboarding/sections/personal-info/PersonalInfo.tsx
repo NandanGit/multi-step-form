@@ -52,6 +52,7 @@ export const PersonalInfo: React.FC<PersonalInfoProps> = () => {
 						className={`form-control input-control ${
 							errors[input.name as Field] ? 'invalid' : ''
 						}`}
+						key={input.name}
 					>
 						<div className='meta'>
 							<label htmlFor={input.name}>{input.label}</label>

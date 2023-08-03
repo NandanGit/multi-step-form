@@ -1,12 +1,26 @@
 import React, { createContext, useState } from 'react';
-import { IOnboardingContext } from './types';
+import { IOnboardingContext, Plan, PlanPeriod, PlanType } from './types';
 import { SidebarStep } from '../../components/logic/onboarding/sidebar/Sidebar.types';
-import { defaultSidebarSteps } from './constants';
 import { isValidEmail } from '../../utils/string';
 
 export const OnboardingContext = createContext<IOnboardingContext>(
 	{} as IOnboardingContext
 );
+const defaultSidebarSteps: SidebarStep[] = [
+	{
+		step: 1,
+		title: 'Your Info',
+		// isActive: true,
+	},
+	{ step: 2, title: 'Select Plan', isActive: true },
+	{ step: 3, title: 'Add-ons' },
+	{ step: 4, title: 'Summary' },
+];
+const availablePlans: Plan[] = [
+	{ name: 'arcade', monthlyPrice: 9, yearlyPrice: 90 },
+	{ name: 'advanced', monthlyPrice: 12, yearlyPrice: 120 },
+	{ name: 'pro', monthlyPrice: 15, yearlyPrice: 150 },
+];
 
 export const OnboardingProvider: React.FC<{ children: React.ReactNode }> = ({
 	children,
@@ -37,17 +51,30 @@ export const OnboardingProvider: React.FC<{ children: React.ReactNode }> = ({
 		phone: '',
 	});
 
+	const [selectedPlan, setSelectedPlan] = useState<PlanType>('arcade');
+	const [selectedPeriod, setSelectedPeriod] = useState<PlanPeriod>('monthly');
+
 	// Use a state to track if the user has submitted the form at least once
 	const [personalInfoSubmitted, setPersonalInfoSubmitted] = useState(false);
 
 	const changeHandlers = {
-		personalInfo: (field: string, value: string) => {
-			if (personalInfoSubmitted)
-				validators.personalInfo({ ...personalInfoFields, [field]: value });
-			setPersonalInfoFields((prev) => ({
-				...prev,
-				[field]: value,
-			}));
+		personalInfo: {
+			fieldChange: (field: string, value: string) => {
+				if (personalInfoSubmitted)
+					validators.personalInfo({ ...personalInfoFields, [field]: value });
+				setPersonalInfoFields((prev) => ({
+					...prev,
+					[field]: value,
+				}));
+			},
+		},
+		selectPlan: {
+			planChange: (plan: PlanType) => {
+				setSelectedPlan(plan);
+			},
+			periodChange: (period: PlanPeriod) => {
+				setSelectedPeriod(period);
+			},
 		},
 	};
 
@@ -118,18 +145,6 @@ export const OnboardingProvider: React.FC<{ children: React.ReactNode }> = ({
 		},
 	};
 
-	// const backHandlers = {
-	// 	selectPlan: () => {
-	// 		setSidebarStep(1);
-	// 	},
-	// 	addOns: () => {
-	// 		setSidebarStep(2);
-	// 	},
-	// 	summary: () => {
-	// 		setSidebarStep(3);
-	// 	},
-	// };
-
 	const backHandler = () => {
 		// Find current step
 		const currentStep = sidebarSteps.find((item) => item.isActive);
@@ -146,7 +161,11 @@ export const OnboardingProvider: React.FC<{ children: React.ReactNode }> = ({
 							fields: personalInfoFields,
 							errors: personalInfoErrors,
 						},
-						selectPlan: {},
+						selectPlan: {
+							availablePlans,
+							selectedPlan,
+							selectedPeriod,
+						},
 						addOns: {},
 						summary: {},
 					},
@@ -154,10 +173,12 @@ export const OnboardingProvider: React.FC<{ children: React.ReactNode }> = ({
 				actions: {
 					personalInfo: {
 						onSubmit: submitHandlers.personalInfo,
-						onChange: changeHandlers.personalInfo,
+						onChange: changeHandlers.personalInfo.fieldChange,
 					},
 					selectPlan: {
 						onSubmit: submitHandlers.selectPlan,
+						onPlanChange: changeHandlers.selectPlan.planChange,
+						onPeriodChange: changeHandlers.selectPlan.periodChange,
 					},
 					addOns: {
 						onSubmit: submitHandlers.addOns,
