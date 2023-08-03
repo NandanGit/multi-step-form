@@ -1,0 +1,26 @@
+.ThankYou {
+	// background-color: $gray-2;
+
+	width: 80%;
+	margin: auto;
+	text-align: center;
+
+	> img {
+		margin-bottom: 1.5rem;
+	}
+
+	> h1 {
+		color: $primary-1;
+		margin-bottom: 1rem;
+	}
+
+	> p {
+		color: $gray-1;
+		font-size: 0.95rem;
+	}
+
+	@include mobile {
+		width: 100%;
+		margin: 2.5rem 0;
+	}
+}

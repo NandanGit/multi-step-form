@@ -146,6 +146,7 @@ export const OnboardingProvider: React.FC<{ children: React.ReactNode }> = ({
 		summary: () => {
 			// Do something here before going to the next step
 			console.log('You are welcome!');
+			setSidebarStep(5);
 		},
 	};
 
