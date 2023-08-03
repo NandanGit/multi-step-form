@@ -1,6 +1,6 @@
 .Sidebar {
 	border-radius: $br-md;
-	background: url(bg-sidebar-desktop.svg);
+	background: url(../bg-sidebar-desktop.svg);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -10,7 +10,7 @@
 	}
 
 	@include mobile {
-		background: url(bg-sidebar-mobile.svg);
+		background: url(../bg-sidebar-mobile.svg);
 		background-position: center;
 		position: fixed;
 		top: 0;
