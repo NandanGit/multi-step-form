@@ -5,10 +5,11 @@ export const defaultSidebarSteps: SidebarStep[] = [
 	{
 		step: 1,
 		title: 'Your Info',
+		isActive: true,
 	},
 	{ step: 2, title: 'Select Plan' },
 	{ step: 3, title: 'Add-ons' },
-	{ step: 4, title: 'Summary', isActive: true },
+	{ step: 4, title: 'Summary' },
 ];
 export const availablePlans: Plan[] = [
 	{ name: 'arcade', monthlyPrice: 9, yearlyPrice: 90 },
@@ -22,7 +23,7 @@ export const availableAddOns: AddOn[] = [
 		description: 'Access to multiplayer games',
 		monthlyPrice: 1,
 		yearlyPrice: 10,
-		isPicked: true,
+		isPicked: false,
 	},
 	{
 		name: 'Larger Storage',
