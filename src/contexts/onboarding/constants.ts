@@ -7,8 +7,8 @@ export const defaultSidebarSteps: SidebarStep[] = [
 		title: 'Your Info',
 	},
 	{ step: 2, title: 'Select Plan' },
-	{ step: 3, title: 'Add-ons', isActive: true },
-	{ step: 4, title: 'Summary' },
+	{ step: 3, title: 'Add-ons' },
+	{ step: 4, title: 'Summary', isActive: true },
 ];
 export const availablePlans: Plan[] = [
 	{ name: 'arcade', monthlyPrice: 9, yearlyPrice: 90 },

@@ -155,6 +155,10 @@ export const OnboardingProvider: React.FC<{ children: React.ReactNode }> = ({
 		setSidebarStep((currentStep?.step || 2) - 1);
 	};
 
+	const gotoStep = (step: number) => {
+		setSidebarStep(step);
+	};
+
 	return (
 		<OnboardingContext.Provider
 			value={{
@@ -194,6 +198,7 @@ export const OnboardingProvider: React.FC<{ children: React.ReactNode }> = ({
 						onSubmit: submitHandlers.summary,
 					},
 					goBack: backHandler,
+					gotoStep,
 				},
 			}}
 		>

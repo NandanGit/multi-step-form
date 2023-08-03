@@ -50,6 +50,7 @@ export interface OnboardingContextActions {
 		onSubmit: () => void;
 	};
 	goBack: () => void;
+	gotoStep: (step: number) => void;
 }
 
 export type PlanType = 'arcade' | 'advanced' | 'pro';

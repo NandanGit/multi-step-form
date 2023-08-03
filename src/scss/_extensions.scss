@@ -1,0 +1,15 @@
+%inline-button {
+	background-color: transparent;
+	border: none;
+	outline: none;
+	color: $gray-1;
+	text-decoration: underline;
+	padding: 0;
+
+	&:hover {
+		cursor: pointer;
+	}
+	&:active {
+		color: $primary-1;
+	}
+}

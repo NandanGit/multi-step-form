@@ -1,0 +1,90 @@
+.Summary {
+	> .content {
+		background-color: $gray-3;
+		padding: $pad-lg;
+		border-radius: $br-md;
+
+		> .plan-details {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: space-between;
+
+			> .plan-info {
+				> .plan-name {
+					font-weight: $fw-md;
+					color: $primary-1;
+				}
+
+				> button {
+					@extend %inline-button;
+				}
+			}
+
+			> .plan-price {
+				font-weight: $fw-md;
+				color: $primary-1;
+			}
+		}
+
+		> hr {
+			margin: 1rem 0;
+			border: none;
+			border-top: 1px solid $gray-2;
+		}
+
+		> .add-ons {
+			> .add-on {
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				align-items: center;
+				margin-bottom: 1rem;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+
+				> .name {
+					font-size: 0.85rem;
+					color: $gray-1;
+				}
+
+				> .price {
+					color: $primary-1;
+					font-size: 0.85rem;
+				}
+			}
+
+			> .no-add-ons {
+				font-size: 0.85rem;
+				color: $gray-1;
+				// text-align: center;
+
+				> button {
+					@extend %inline-button;
+				}
+			}
+		}
+	}
+
+	> .total {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		margin-top: 0.5rem;
+		padding: $pad-lg;
+
+		> .label {
+			// font-weight: $fw-md;
+			color: $gray-1;
+			font-size: 0.85rem;
+		}
+
+		> .price {
+			font-weight: $fw-lg;
+			color: $primary-2;
+		}
+	}
+}
